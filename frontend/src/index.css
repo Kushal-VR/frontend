@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom color variables */
+:root {
+  --primary-blue: #8DBCC7;
+  --secondary-blue: #A4CCD9;
+  --light-blue: #C4E1E6;
+  --mint-green: #EBFFD8;
+  --dark-blue: #6B9BA8;
+  --text-dark: #2D4A52;
+  --text-light: #4A6B7A;
+}
+
+/* Base styles */
+* {
+  font-family: Outfit;
+}
+
+body {
+  background: #f8fdfa;
+  min-height: 100vh;
+}
+
+/* Navigation styles */
+a.active hr {
+  display: block;
+  background-color: var(--primary-blue) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-blue);
+}
+
+/* Mobile navigation */
+@media (max-width: 640px) {
+  a.active {
+    background-color: var(--primary-blue);
+    color: white;
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(141, 188, 199, 0.3);
+}
+
+/* Card styles */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 225, 230, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(141, 188, 199, 0.2);
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--mint-green) 0%, var(--light-blue) 50%, var(--secondary-blue) 100%);
+}
+
+.gradient-bg-reverse {
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--light-blue) 50%, var(--mint-green) 100%);
+}
+
+/* Text colors */
+.text-primary-blue {
+  color: var(--primary-blue);
+}
+
+.text-secondary-blue {
+  color: var(--secondary-blue);
+}
+
+.text-dark-blue {
+  color: var(--text-dark);
+}
+
+.text-light-blue {
+  color: var(--text-light);
+}
+
+/* Border colors */
+.border-primary-blue {
+  border-color: var(--primary-blue);
+}
+
+.border-secondary-blue {
+  border-color: var(--secondary-blue);
+}
+
+.border-light-blue {
+  border-color: var(--light-blue);
+}
+
+/* Background colors */
+.bg-primary-blue {
+  background-color: var(--primary-blue);
+}
+
+.bg-secondary-blue {
+  background-color: var(--secondary-blue);
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue);
+}
+
+.bg-mint-green {
+  background-color: var(--mint-green);
+}
+
+/* Hover effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prata font */
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
