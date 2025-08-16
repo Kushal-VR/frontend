@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
+import { products as localProducts } from '../assets/assets';
 import Title from './Title';
 import ProductItem from './ProductItem';
 
 const BestSeller = () => {
 
-    const {products} = useContext(ShopContext);
+    const {products: backendProducts} = useContext(ShopContext);
     const [bestSeller,setBestSeller] = useState([]);
+
+    // Use backend products if available, otherwise use local products
+    const products = backendProducts && backendProducts.length > 0 ? backendProducts : localProducts;
 
     useEffect(()=>{
         const bestProduct = products.filter((item)=>(item.bestseller));

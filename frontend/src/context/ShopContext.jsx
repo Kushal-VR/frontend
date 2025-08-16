@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import { products as localProducts } from '../assets/assets';
 
 export const ShopContext = createContext();
 
@@ -13,7 +14,7 @@ const ShopContextProvider = (props) => {
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(localProducts); // Initialize with local products
     const [token, setToken] = useState('')
     const navigate = useNavigate();
 
